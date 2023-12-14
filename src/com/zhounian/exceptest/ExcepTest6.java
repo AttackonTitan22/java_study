@@ -21,7 +21,7 @@ import java.io.*;
             } catch (Exception e) {
                 System.out.println("进入catch");
                 // 文档读取异常
-                // System.exit(-1);
+                //System.exit(-1);
                 System.out.println("message="+e.getLocalizedMessage());  //没有报哪一行出错
                 e.printStackTrace();   // 打印出错异常还出现可以报出错先异常的行
             }

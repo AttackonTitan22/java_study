@@ -40,6 +40,13 @@ public class GameJFrame extends JFrame implements KeyListener, ActionListener {
     JMenuItem reLoginItem = new JMenuItem("重新登录");
     JMenuItem closeItem = new JMenuItem("关闭游戏");
 
+
+    JMenuItem girlItem = new JMenuItem("美女");
+    JMenuItem animalItem = new JMenuItem("动物");
+    JMenuItem sportItem = new JMenuItem("运动");
+
+
+
     JMenuItem accountItem = new JMenuItem("公众号");
 
     String path="puzzlegame\\image\\animal\\animal3\\";
@@ -131,21 +138,35 @@ public class GameJFrame extends JFrame implements KeyListener, ActionListener {
         //创建菜单上面的两个选项的对象，（功能，关于我们）
         JMenu functionJMenu = new JMenu("功能");
         JMenu aboutJMenu =new JMenu("关于我们");
+        JMenu changeItem = new JMenu("更换图片");
 
 
         //为每一个条目设置事件监听
         replayItem.addActionListener(this);
         reLoginItem.addActionListener(this);
         closeItem.addActionListener(this);
+        changeItem.addActionListener(this);
 
         accountItem.addActionListener(this);
 
+        girlItem.addActionListener(this);
+        animalItem.addActionListener(this);
+        sportItem.addActionListener(this);
+
+        changeItem.add(girlItem);
+        changeItem.add(animalItem);
+        changeItem.add(sportItem);
+
         //将每一个选项下面的条目加入到选项中
+        functionJMenu.add(changeItem);
         functionJMenu.add(replayItem);
         functionJMenu.add(reLoginItem);
         functionJMenu.add(closeItem);
 
+
         aboutJMenu.add(accountItem);
+
+
 
         jMenubar.add(functionJMenu);
         jMenubar.add(aboutJMenu);
@@ -400,6 +421,53 @@ public class GameJFrame extends JFrame implements KeyListener, ActionListener {
             jDialog.setVisible(true);
 
 
+        }
+        else if(obj==girlItem)
+        {
+            System.out.println("切换美女");
+            //计数器要清零
+            step=0;
+            //随机选择图片
+            Random r = new Random();
+            path="puzzlegame\\image\\girl\\girl"+(r.nextInt(13)+1)+"\\";
+
+            //再次打乱二维数组中的数据
+            initData();
+
+            //重新加载图片
+            initImage();
+
+        }
+        else if(obj==animalItem)
+        {
+            System.out.println("切换动物");
+            //计数器要清零
+            step=0;
+            //随机选择图片
+            Random r = new Random();
+            path="puzzlegame\\image\\animal\\animal"+(r.nextInt(8)+1)+"\\";
+
+            //再次打乱二维数组中的数据
+            initData();
+
+            //重新加载图片
+            initImage();
+
+        }
+        else if(obj==sportItem)
+        {
+            System.out.println("切换运动");
+            //计数器要清零
+            step=0;
+            //随机选择图片
+            Random r = new Random();
+            path="puzzlegame\\image\\sport\\sport"+(r.nextInt(10)+1)+"\\";
+
+            //再次打乱二维数组中的数据
+            initData();
+
+            //重新加载图片
+            initImage();
         }
     }
 }

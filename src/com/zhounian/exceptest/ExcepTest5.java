@@ -16,6 +16,8 @@ public class ExcepTest5 {
             }
         } catch (IOException e) {
             System.out.println("IOException in try block =>" + e.getMessage());
+            e.printStackTrace();
         }
+        //br资源自动关闭，无需br.close()
     }
 }

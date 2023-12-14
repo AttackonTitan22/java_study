@@ -1,12 +1,20 @@
 package com.zhounian.enumtest;
 
 public enum Color {
-    RED, GREEN, BLUE;
+    RED("red"),
+    GREEN("green"),
+    BLUE("blue")
+    ;
 
     // 构造函数
-    private Color()
+//    private Color()
+//    {
+//        System.out.println("Constructor called for : " + this.toString());
+//    }
+
+    private Color(String color)
     {
-        System.out.println("Constructor called for : " + this.toString());
+        System.out.println("Constructor called for : " + color);
     }
 
     public void colorInfo()

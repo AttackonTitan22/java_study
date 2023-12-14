@@ -1,0 +1,29 @@
+package com.zhounian.RegexExampleDemo;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+//start 和 end 方法
+//下面是一个对单词 "cat" 出现在输入字符串中出现次数进行计数的例子：
+
+//可以看到这个例子是使用单词边界，以确保字母 "c" "a" "t" 并非仅是一个较长的词的子串。
+// 它也提供了一些关于输入字符串中匹配发生位置的有用信息。
+//
+//Start 方法返回在以前的匹配操作期间，由给定组所捕获的子序列的初始索引，end 方法最后一个匹配字符的索引加 1。
+public class RegexMatches2 {
+    private static final String REGEX = "\\bcat\\b";
+    private static final String INPUT =
+            "cat cat cat cattie cat";
+
+    public static void main( String[] args ){
+        Pattern p = Pattern.compile(REGEX);
+        Matcher m = p.matcher(INPUT); // 获取 matcher 对象
+        int count = 0;
+
+        while(m.find()) {
+            count++;
+            System.out.println("Match number "+count);
+            System.out.println("start(): "+m.start());
+            System.out.println("end(): "+m.end());
+        }
+    }
+}
