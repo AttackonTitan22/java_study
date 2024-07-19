@@ -11,7 +11,7 @@ public class ServerByUDP {
             DatagramSocket server = new DatagramSocket(5060);
             DatagramPacket packet = new DatagramPacket(new byte[1024], 1024);
             server.receive(packet);
-            System.out.println(packet.getAddress().getHostName() + "(" + packet.getPort() + "):" + new String(packet.getData()));
+            System.out.println(packet.getAddress().getHostName() + "(" + packet.getPort() + "):" + new String(packet.getData(),0,packet.getLength()));
             packet.setData("Hello Client".getBytes());
             packet.setPort(5070);
             packet.setAddress(InetAddress.getLocalHost());

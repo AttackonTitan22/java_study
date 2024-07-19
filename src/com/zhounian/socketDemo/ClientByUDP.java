@@ -9,7 +9,8 @@ public class ClientByUDP {
     public static void main(String[] args){
         try {
             DatagramSocket client = new DatagramSocket(5070);
-            DatagramPacket packet = new DatagramPacket(new byte[1024],1024);
+            DatagramPacket packet = new DatagramPacket(new byte[1024], 1024);
+
             packet.setAddress(InetAddress.getLocalHost());
             packet.setData("Hello Server".getBytes());
             packet.setPort(5060);

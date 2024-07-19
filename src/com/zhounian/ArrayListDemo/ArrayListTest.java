@@ -2,34 +2,51 @@ package com.zhounian.ArrayListDemo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class ArrayListTest {
     public static void main(String[] args) {
-        ArrayList<String> sites = new ArrayList<String>();
+        ArrayList<StringBuilder> sites = new ArrayList<>();
         //添加元素到 ArrayList 可以使用 add() 方法:
-        sites.add("Google");
-        sites.add("Runoob");
-        sites.add("Taobao");
-        sites.add("Weibo");
-        System.out.println(sites);
-        //访问 ArrayList 中的元素可以使用 get() 方法：
-        System.out.println(sites.get(1));  // 访问第二个元素
+        sites.add(new StringBuilder("Google"));
+        sites.add(new StringBuilder("Runoob"));
+        sites.add(new StringBuilder("Taobao"));
+        sites.add(new StringBuilder("Weibo"));
 
-        //如果要修改 ArrayList 中的元素可以使用 set() 方法：
-        sites.set(2, "Wiki"); // 第一个参数为索引位置，第二个为要修改的值
-        System.out.println(sites);
+//        Iterator<String> iterator = sites.iterator();
+//        while (iterator.hasNext())
+//        {
+//            System.out.println(iterator.next());
+//        }
 
-        //如果要删除 ArrayList 中的元素可以使用 remove() 方法：
-        sites.remove(3); // 删除第四个元素
-        System.out.println(sites);
 
-        //如果要计算 ArrayList 中的元素数量可以使用 size() 方法：
-        System.out.println(sites.size());
+        //浅拷贝  例子
+        ArrayList<StringBuilder> clone = (ArrayList<StringBuilder>) sites.clone();
+        System.out.println(clone.get(0));
+        clone.get(0).append("sdf");
+        System.out.println(clone.get(0));
+        System.out.println(sites.get(0));
 
-        Iterator<String> iterator = sites.iterator();
-        while (iterator.hasNext())
-        {
-            System.out.println(iterator.next());
+        List<Integer> list = new ArrayList<>();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        Integer[] l = list.toArray(new Integer[9]);
+        for (Integer i : l) {
+            System.out.println(i);
+        }
+
+        int[] a = new int[10];
+        a[0] = 0;
+        a[1] = 1;
+        a[2] = 2;
+        a[3] = 3;
+        a[4] = 5;
+        System.arraycopy(a, 2, a, 3, 1);
+        a[2]=99;
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
         }
     }
 }

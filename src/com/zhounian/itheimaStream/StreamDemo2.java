@@ -37,7 +37,7 @@ public class StreamDemo2 {
 
         Stream.of("a","df","s","ji","ssn","sdsgd").forEach(s-> System.out.println(s));
 
-        Stream.of(1,2,3,4,5).forEach(s-> System.out.println(s));
+        Stream.of(1,2,3,4,5).forEach(System.out::println);
 
         //stream接口也可以传入数组，但是数组类型必须是引用类型
 
