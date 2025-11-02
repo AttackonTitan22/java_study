@@ -13,6 +13,7 @@ public class Base {
         System.out.println("士大夫");
         System.out.println("士大夫士大夫");
         System.out.println("嘻嘻嘻");
+        System.out.println("地方");
     }
 }
 
