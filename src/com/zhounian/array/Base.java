@@ -12,6 +12,7 @@ public class Base {
         System.out.println("的事发生的故事大纲");
         System.out.println("士大夫");
         System.out.println("士大夫士大夫");
+        System.out.println("地方");
     }
 }
 
