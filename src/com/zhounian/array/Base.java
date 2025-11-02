@@ -10,6 +10,7 @@ public class Base {
         Base a = new A();
         System.out.println("速度可能");
         System.out.println("存在于01");
+        System.out.println("存在与master");
     }
 }
 
