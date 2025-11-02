@@ -10,6 +10,7 @@ public class Base {
         Base a = new A();
         System.out.println("送佛送到能否");
         System.out.println("士大夫");
+        System.out.println("rebase");
     }
 }
 
