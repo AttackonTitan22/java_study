@@ -25,5 +25,6 @@ public class FunctionDemo6 {
         System.out.println("方法引用");
         Integer[] array2 = list.stream().toArray(Integer[]::new);
         System.out.println(Arrays.toString(array2));
+
     }
 }

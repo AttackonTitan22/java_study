@@ -22,10 +22,16 @@ public class Cook extends Thread{
                     }else {
                         System.out.println(getName()+ "制作了一份面条");
                         Desk.foodFlag=1;
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         Desk.lock.notifyAll();
                     }
                 }
             }
         }
+        System.out.println("厨师已经做完了"+Desk.size+"份面条！");
     }
 }

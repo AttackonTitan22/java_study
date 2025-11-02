@@ -5,13 +5,13 @@ import java.lang.reflect.Proxy;
 
 //这段代码定义了一个接口Hello，其中包含一个sayHello方法。
 interface Hello {
-    void sayHello();
+    void sayHello(String word);
 }
 
 //这段代码实现了Hello接口，并定义了sayHello方法的具体实现，即输出"Hello, World!"。
 class HelloImpl implements Hello {
-    public void sayHello() {
-        System.out.println("Hello, World!");
+    public void sayHello(String word) {
+        System.out.println("Hello, World! "+word);
     }
 }
 
@@ -22,7 +22,7 @@ class HelloImpl implements Hello {
 在目标方法执行后输出"After method invocation"。
  */
 class HelloProxy implements InvocationHandler {
-    private Object target;
+    private final Object target;
 
     public HelloProxy(Object target) {
         this.target = target;
@@ -53,7 +53,7 @@ public class Example1 {
                 hello.getClass().getInterfaces(),
                 handler);
 
-        helloProxy.sayHello();
+        helloProxy.sayHello("zhounian");
     }
 }
 

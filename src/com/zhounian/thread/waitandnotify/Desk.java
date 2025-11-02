@@ -11,7 +11,9 @@ public class Desk  {
     public static int foodFlag = 0;
 
     //总个数
-    public static int count = 10;
+    public static int count = 2;
+
+    public static int size=count;
 
     /**
      * 锁对象
