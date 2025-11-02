@@ -13,6 +13,7 @@ public class Base {
         System.out.println("rebase");
         System.out.println("是对");
         System.out.println("速度可能是肯定");
+        System.out.println("rebase master");
     }
 }
 
