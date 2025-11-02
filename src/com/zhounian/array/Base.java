@@ -8,14 +8,6 @@ public class Base {
     public static void main(String[] args) {
         Base base = new Base();
         Base a = new A();
-        System.out.println("是对");
-        System.out.println("速度可能是肯定");
-        System.out.println("送佛送到能否");
-        System.out.println("士大夫");
-        System.out.println("rebase");
-        System.out.println("是对");
-        System.out.println("速度可能是肯定");
-        System.out.println("rebase master");
     }
 }
 
